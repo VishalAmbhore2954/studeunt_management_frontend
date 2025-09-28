@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { RouterLink } from '@angular/router';
+import { SignupComponent } from '../signup/signup.component';
 
 @Component({
   selector: 'app-login',
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule,RouterLink],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
@@ -12,5 +14,7 @@ export class LoginComponent {
   loginForm! : FormGroup;
 
 
-  onSubmit(){}
+  onSubmit(){
+    alert("Hello");
+  }
 }

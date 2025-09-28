@@ -1,0 +1,28 @@
+<div class="signup-container">
+  <div class="signup-box">
+    <h2>Sign Up</h2>
+    <p>Create your account</p>
+
+    <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+      <!-- Name -->
+      <div class="form-group">
+        <label>Name</label>
+        <input type="text" formControlName="name" placeholder="Enter your name" />
+      </div>
+
+      <!-- City -->
+      <div class="form-group">
+        <label>City</label>
+        <input type="text" formControlName="city" placeholder="Enter city name" />
+      </div>
+
+      <!-- Submit -->
+      <button type="submit">Sign Up</button>
+    </form>
+
+    <p class="login-text">
+      Already have an account?
+      <a routerLink="/login">Login</a>
+    </p>
+  </div>
+</div>
