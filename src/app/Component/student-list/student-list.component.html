@@ -1,0 +1,34 @@
+<div class="loader-container" *ngIf="isLoading">
+  <div class="loader"></div>
+</div>
+<app-header></app-header>
+<div class="table-container">
+  <h2>Students List</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>City</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let student of studentList; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ student.name }}</td>
+        <td>{{ student.email }}</td>
+        <td>{{ student.city }}</td>
+        <td class="action-buttons">
+          <button class="edit-btn" title="Edit">
+            <i class="fa fa-edit"></i>
+          </button>
+          <button class="delete-btn" title="Delete" (click)="deleteStudent(student.id)">
+            <i class="fa fa-trash"></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

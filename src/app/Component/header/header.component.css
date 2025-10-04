@@ -1,0 +1,112 @@
+.app-header {
+  width: 100%;
+  background: linear-gradient(to right, #3b82f6, #ec4899);
+  color: white;
+  padding: 12px 20px; /* reduced padding */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-sizing: border-box; /* include padding in width */
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap; /* ensures wrapping on small screens */
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  flex-shrink: 1; /* prevent logo from stretching */
+}
+
+/* Desktop Navigation */
+.nav-links {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap; /* prevent overflow */
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  white-space: nowrap; /* keep link text on one line */
+}
+
+.nav-links a:hover {
+  opacity: 0.8;
+  transform: scale(1.05);
+}
+
+.logout-btn {
+  background: white;
+  color: #ec4899;
+  border: none;
+  padding: 6px 12px; /* reduced padding for small screens */
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+  flex-shrink: 0; /* prevent button from shrinking too much */
+}
+
+.logout-btn:hover {
+  background: #f3f4f6;
+  transform: scale(1.05);
+}
+
+/* Hamburger Button */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: linear-gradient(to right, #3b82f6, #ec4899);
+    margin-top: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    padding-top: 10px;
+    box-sizing: border-box;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 10px 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 16px;
+  }
+
+  .logout-btn {
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+  }
+
+  .header-content {
+    justify-content: space-between;
+    gap: 10px; /* smaller gap on mobile */
+  }
+}
