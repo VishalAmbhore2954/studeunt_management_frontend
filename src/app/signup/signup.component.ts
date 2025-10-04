@@ -22,6 +22,8 @@ export class SignupComponent implements OnInit{
   initForm(){
     this.employeeForm = this.fb.group({
       name : [''],
+      email : [''],
+      password : [''],
       city : ['']
     })
   }
