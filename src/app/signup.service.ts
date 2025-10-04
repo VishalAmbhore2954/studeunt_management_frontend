@@ -12,6 +12,6 @@ export class SignupService {
   constructor(private http:HttpClient) { }
 
   storeEmployeeData(data:any){
-    return this.http.post(`${this.apiUrl}/employee`,data);
+    return this.http.post(`https://springboot-app-42iw.onrender.com/employee`,data);
   }
 }
