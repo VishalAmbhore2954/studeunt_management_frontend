@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
-import { SignupComponent } from '../signup/signup.component';
 
 @Component({
   selector: 'app-login',
