@@ -1,0 +1,10 @@
+<div class="teachers-container">
+  <h2>Our Expert Teachers</h2>
+  <div class="teachers-cards">
+    <div class="teacher-card" *ngFor="let teacher of teachers">
+      <img [src]="teacher.image" alt="{{teacher.name}}" />
+      <h3>{{ teacher.name }}</h3>
+      <p>{{ teacher.subject }}</p>
+    </div>
+  </div>
+</div>
