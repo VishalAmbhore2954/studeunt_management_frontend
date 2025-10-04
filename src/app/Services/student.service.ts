@@ -12,10 +12,10 @@ export class StudentService {
   constructor(private http: HttpClient) { }
 
   getStudents() {
-    return this.http.get(`${this.apiUrl}/student`);
+    return this.http.get(`https://student-management-backend-2-xz3c.onrender.com/student`);
   }
 
   deleteStudent(id: number) {
-    return this.http.delete(`${this.apiUrl}/student/${id}`);
+    return this.http.delete(`https://student-management-backend-2-xz3c.onrender.com/student/${id}`);
   }
 }

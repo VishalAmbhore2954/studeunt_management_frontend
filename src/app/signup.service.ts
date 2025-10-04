@@ -12,6 +12,6 @@ export class SignupService {
   constructor(private http:HttpClient) { }
 
   storeEmployeeData(data:any){
-    return this.http.post(`${this.apiUrl}/student`,data);
+    return this.http.post(`https://student-management-backend-2-xz3c.onrender.com/student`,data);
   }
 }
