@@ -1,1 +1,1 @@
-export const environment = { production: true, apiBaseUrl: 'https://springboot-app-42iw.onrender.com' };
+export const environment = { production: true, apiBaseUrl: 'https://student-management-backend-2-xz3c.onrender.com' };

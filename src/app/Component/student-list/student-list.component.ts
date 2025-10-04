@@ -28,6 +28,9 @@ export class StudentListComponent implements OnInit{
       this.isLoading = false;
       console.log("student list after assign",this.studentList);
     })
+    setTimeout(() => {
+      this.isLoading = false;
+    }, 15000);
   }
 
   deleteStudent(id:number){
