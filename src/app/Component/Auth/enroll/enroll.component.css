@@ -1,0 +1,198 @@
+/* --------------------------- */
+/* Container Full Screen with Gradient */
+/* --------------------------- */
+.enroll-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  background: linear-gradient(135deg, #3b82f6, #ec4899, #fcd34d);
+  background-size: 400% 400%;
+  animation: gradientMove 15s ease infinite;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* --------------------------- */
+/* Box Styling */
+/* --------------------------- */
+.enroll-box {
+  background: rgba(255, 255, 255, 0.97);
+  border-radius: 20px;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+  padding: 36px 32px;
+  width: 100%;
+  max-width: 900px; /* increased width for full screen */
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.enroll-box:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* --------------------------- */
+/* Headings */
+/* --------------------------- */
+.enroll-box h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1e3a8a;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.enroll-box p {
+  font-size: 16px;
+  color: #6b7280;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.enroll-box h3 {
+  font-size: 22px;
+  color: #3b82f6;
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+
+/* --------------------------- */
+/* Form Inputs */
+/* --------------------------- */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: #1e3a8a;
+}
+
+.form-group i {
+  margin-right: 6px;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+  outline: none;
+  transition: 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+/* --------------------------- */
+/* Submit Button */
+/* --------------------------- */
+button {
+  display: block;
+  width: auto;
+  min-width: 200px;
+  padding: 14px 36px;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(to right, #3b82f6, #ec4899);
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  margin: 20px auto 0 auto; /* centered button */
+  white-space: nowrap; /* prevent wrapping */
+}
+
+button:hover {
+  transform: scale(1.02);
+  opacity: 0.9;
+}
+
+/* --------------------------- */
+/* Back Text */
+/* --------------------------- */
+.back-text {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #6b7280;
+  text-align: center;
+}
+
+.back-text a {
+  color: #ec4899;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.back-text a:hover {
+  text-decoration: underline;
+}
+
+/* --------------------------- */
+/* Responsive */
+/* --------------------------- */
+@media (max-width: 1024px) {
+  .enroll-box {
+    max-width: 700px;
+    padding: 32px 28px;
+  }
+}
+
+@media (max-width: 768px) {
+  .enroll-box {
+    max-width: 100%;
+    padding: 28px 20px;
+  }
+
+  .enroll-box h2 {
+    font-size: 28px;
+  }
+
+  .enroll-box h3 {
+    font-size: 20px;
+  }
+
+  .form-group input,
+  .form-group select {
+    padding: 12px;
+  }
+
+  button {
+    width: 90%;
+    padding: 12px 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .enroll-box h2 {
+    font-size: 24px;
+  }
+
+  .enroll-box h3 {
+    font-size: 18px;
+  }
+
+  .form-group input,
+  .form-group select {
+    padding: 10px;
+  }
+
+  button {
+    width: 100%;
+    padding: 12px;
+  }
+}

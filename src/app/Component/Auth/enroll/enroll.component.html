@@ -1,0 +1,105 @@
+<div class="enroll-container">
+  <div class="enroll-box">
+    <h2>Enroll New Student</h2>
+    <p>Fill in all required details to register the student</p>
+
+    <form>
+
+      <!-- Personal Details -->
+      <h3>Personal Details</h3>
+      <div class="form-group">
+        <label><i class="fa fa-user"></i> Full Name</label>
+        <input type="text" formControlName="name" placeholder="Enter full name" />
+      </div>
+
+      <div class="form-group">
+        <label><i class="fa fa-envelope"></i> Email</label>
+        <input type="email" formControlName="email" placeholder="Enter email" />
+      </div>
+
+      <div class="form-group">
+        <label><i class="fa fa-birthday-cake"></i> Date of Birth</label>
+        <input type="date" formControlName="dob" />
+      </div>
+
+      <div class="form-group">
+        <label><i class="fa fa-venus-mars"></i> Gender</label>
+        <select formControlName="gender">
+          <option value="">Select Gender</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label><i class="fa fa-city"></i> City</label>
+        <input type="text" formControlName="city" placeholder="Enter city" />
+      </div>
+
+      <!-- Parent/Guardian Details -->
+      <h3>Parent / Guardian Details</h3>
+      <div class="form-group">
+        <label><i class="fa fa-user-tie"></i> Father's Name</label>
+        <input type="text" formControlName="fatherName" placeholder="Enter father's name" />
+      </div>
+
+      <div class="form-group">
+        <label><i class="fa fa-user-tie"></i> Mother's Name</label>
+        <input type="text" formControlName="motherName" placeholder="Enter mother's name" />
+      </div>
+
+      <div class="form-group">
+        <label><i class="fa fa-phone"></i> Contact Number</label>
+        <input type="tel" formControlName="contactNumber" placeholder="Enter phone number" />
+      </div>
+
+      <!-- Education Details -->
+      <h3>Education Details</h3>
+      <div class="form-group">
+        <label><i class="fa fa-school"></i> Class / Grade</label>
+        <input type="text" formControlName="grade" placeholder="Enter class/grade" />
+      </div>
+
+      <div class="form-group">
+        <label><i class="fa fa-users"></i> Section</label>
+        <input type="text" formControlName="section" placeholder="Enter section" />
+      </div>
+
+      <div class="form-group">
+        <label><i class="fa fa-building"></i> Previous School</label>
+        <input type="text" formControlName="previousSchool" placeholder="Enter previous school" />
+      </div>
+
+      <div class="form-group">
+        <label><i class="fa fa-id-badge"></i> Roll Number</label>
+        <input type="text" formControlName="rollNumber" placeholder="Enter roll number" />
+      </div>
+
+      <!-- Admission Details -->
+      <h3>Admission Details</h3>
+      <div class="form-group">
+        <label><i class="fa fa-calendar-check"></i> Admission Date</label>
+        <input type="date" formControlName="admissionDate" />
+      </div>
+
+      <div class="form-group">
+        <label><i class="fa fa-id-card"></i> Student ID</label>
+        <input type="text" formControlName="studentId" placeholder="Enter student ID" />
+      </div>
+
+      <!-- Photo Upload -->
+      <div class="form-group">
+        <label><i class="fa fa-camera"></i> Upload Photo</label>
+        <input type="file" formControlName="photo" />
+      </div>
+
+      <!-- Submit -->
+      <button type="submit">Enroll Student</button>
+    </form>
+
+    <p class="back-text">
+      <a routerLink="/students-list">Back to Students List</a>
+    </p>
+  </div>
+</div>

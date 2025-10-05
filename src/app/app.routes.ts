@@ -8,6 +8,7 @@ import { SubjectsComponent } from './Component/Auth/subjects/subjects.component'
 import { SportsComponent } from './Component/Auth/sports/sports.component';
 import { AboutComponent } from './Component/Auth/about/about.component';
 import { ContactComponent } from './Component/Auth/contact/contact.component';
+import { EnrollComponent } from './Component/Auth/enroll/enroll.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -19,5 +20,6 @@ export const routes: Routes = [
     { path: 'subjects', component: SubjectsComponent },
     { path: 'sports', component: SportsComponent },
     { path: 'about', component: AboutComponent },
-    { path : 'contact', component : ContactComponent }
+    { path : 'contact', component : ContactComponent },
+    { path: 'enroll', component: EnrollComponent }
 ];
