@@ -1,40 +1,55 @@
-/* Container full screen */
+/* Container full screen with animated gradient */
 .signup-container {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
   padding: 20px;
-  background: linear-gradient(135deg, #bfdbfe, #e9d5ff, #fbcfe8);
+  background: linear-gradient(135deg, #3b82f6, #ec4899, #fcd34d);
+  background-size: 400% 400%;
+  animation: gradientMove 15s ease infinite;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 /* Box styling */
 .signup-box {
-  background: #fff;
-  border-radius: 16px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-  padding: 32px;
+  background: rgba(255,255,255,0.95);
+  border-radius: 20px;
+  box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+  padding: 36px 32px;
   width: 100%;
-  max-width: 400px;
+  max-width: 420px;
   text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.signup-box:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 30px rgba(0,0,0,0.25);
 }
 
 /* Title */
 .signup-box h2 {
-  font-size: 24px;
-  font-weight: bold;
+  font-size: 28px;
+  font-weight: 700;
+  color: #1e3a8a;
   margin-bottom: 8px;
 }
 
 .signup-box p {
-  font-size: 14px;
+  font-size: 16px;
   color: #6b7280;
-  margin-bottom: 24px;
+  margin-bottom: 28px;
 }
 
 /* Form inputs */
 .form-group {
-  margin-bottom: 16px;
+  margin-bottom: 18px;
   text-align: left;
 }
 
@@ -42,20 +57,26 @@
   display: block;
   font-size: 14px;
   margin-bottom: 6px;
+  color: #1e3a8a;
+}
+
+.form-group i {
+  margin-right: 6px;
 }
 
 .form-group input {
   width: 100%;
-  padding: 12px;
-  border-radius: 8px;
+  padding: 14px;
+  border-radius: 10px;
   border: 1px solid #d1d5db;
   font-size: 14px;
   outline: none;
+  transition: 0.3s ease;
 }
 
 .form-group input:focus {
   border-color: #3b82f6;
-  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3);
+  box-shadow: 0 0 0 3px rgba(59,130,246,0.2);
 }
 
 /* Button */
@@ -69,10 +90,11 @@ button {
   border-radius: 12px;
   background: linear-gradient(to right, #3b82f6, #ec4899);
   cursor: pointer;
-  transition: opacity 0.2s ease;
+  transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
 button:hover {
+  transform: scale(1.02);
   opacity: 0.9;
 }
 
@@ -100,11 +122,11 @@ button:hover {
   }
 
   .signup-box h2 {
-    font-size: 20px;
+    font-size: 22px;
   }
 
   .form-group input {
-    padding: 10px;
+    padding: 12px;
   }
 
   button {
