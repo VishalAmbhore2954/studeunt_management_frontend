@@ -1,0 +1,14 @@
+<section class="sports-section">
+  <h2 class="title">Our Sports</h2>
+  <p class="subtitle">Explore a variety of sports to stay active, healthy, and disciplined.</p>
+
+  <div class="sports-grid">
+    <div class="sport-card" *ngFor="let sport of sports">
+      <div class="icon">
+        <i class="fa {{sport.icon}}"></i>
+      </div>
+      <h3>{{ sport.name }}</h3>
+      <p>{{ sport.description }}</p>
+    </div>
+  </div>
+</section>

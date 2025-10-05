@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { SignupService } from '../../Services/Signup/signup.service';
+import { SignupService } from '../../../Services/Signup/signup.service';
 import { RouterLink } from '@angular/router';
-import { NotificationService } from '../../Services/Notification/nitification.service';
+import { NotificationService } from '../../../Services/Notification/nitification.service';
 
 @Component({
   selector: 'app-signup',

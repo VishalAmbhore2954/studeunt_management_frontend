@@ -1,13 +1,25 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { LoginComponent } from './Component/login/login.component';
+import { Router, RouterOutlet } from '@angular/router';
+import { AuthenticatedLayoutComponent } from './Component/Auth/authenticated-layout/authenticated-layout.component';
+import { UnauthenticatedLayoutComponent } from './Component/UnAuth/unauthenticated-layout/unauthenticated-layout.component';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [AuthenticatedLayoutComponent, UnauthenticatedLayoutComponent, NgIf],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'frontend';
+  title = 'student management';
+
+  constructor(private router: Router) {}
+
+  get isUnAuthenticated(): boolean {
+    return this.router.url === '/login' || this.router.url === '/signup';
+  }
+
+  get isAuthenticated(): boolean {
+    return !this.isUnAuthenticated;
+  }
 }

@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { StudentService } from '../../Services/Student/student.service';
+import { StudentService } from '../../../Services/Student/student.service';
 import { NgFor, NgIf } from '@angular/common';
 import { HeaderComponent } from '../header/header.component';
-import { NotificationService } from '../../Services/Notification/nitification.service';
+import { NotificationService } from '../../../Services/Notification/nitification.service';
 
 @Component({
   selector: 'app-student-list',
-  imports: [NgFor, HeaderComponent, NgIf],
+  imports: [NgFor, NgIf],
   templateUrl: './student-list.component.html',
   styleUrl: './student-list.component.css',
 })

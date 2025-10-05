@@ -1,9 +1,13 @@
 import { Routes } from '@angular/router';
-import { SignupComponent } from './Component/signup/signup.component';
-import { LoginComponent } from './Component/login/login.component';
-import { StudentListComponent } from './Component/student-list/student-list.component';
-import { HomeComponent } from './Component/home/home.component';
-import { TeachersComponent } from './Component/teachers/teachers.component';
+import { SignupComponent } from './Component/UnAuth/signup/signup.component';
+import { LoginComponent } from './Component/UnAuth/login/login.component';
+import { StudentListComponent } from './Component/Auth/student-list/student-list.component';
+import { HomeComponent } from './Component/Auth/home/home.component';
+import { TeachersComponent } from './Component/Auth/teachers/teachers.component';
+import { SubjectsComponent } from './Component/Auth/subjects/subjects.component';
+import { SportsComponent } from './Component/Auth/sports/sports.component';
+import { AboutComponent } from './Component/Auth/about/about.component';
+import { ContactComponent } from './Component/Auth/contact/contact.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -11,5 +15,9 @@ export const routes: Routes = [
     { path:'login',component:LoginComponent},
     { path:'signup', component:SignupComponent },
     { path: 'students-list', component: StudentListComponent },
-    { path: 'teachers', component: TeachersComponent }
+    { path: 'teachers', component: TeachersComponent },
+    { path: 'subjects', component: SubjectsComponent },
+    { path: 'sports', component: SportsComponent },
+    { path: 'about', component: AboutComponent },
+    { path : 'contact', component : ContactComponent }
 ];

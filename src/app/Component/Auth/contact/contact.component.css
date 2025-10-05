@@ -1,0 +1,75 @@
+@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css';
+
+.contact-section {
+  padding: 60px 20px;
+  background: #f8f9ff;
+  text-align: center;
+}
+
+.contact-header .title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2a2a72;
+  margin-bottom: 10px;
+}
+
+.contact-header .subtitle {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+.contact-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.info-card {
+  background: white;
+  padding: 25px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 250px;
+  transition: all 0.3s ease;
+}
+
+.info-card i {
+  font-size: 2rem;
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+.info-card p {
+  font-size: 0.95rem;
+  color: #555;
+  text-align: center;
+}
+
+.info-card a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.info-card a:hover {
+  text-decoration: underline;
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+  background: linear-gradient(135deg, #e3f2fd, #ffffff);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .info-card {
+    width: 100%;
+  }
+}
