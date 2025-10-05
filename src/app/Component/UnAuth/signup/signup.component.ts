@@ -30,7 +30,7 @@ export class SignupComponent implements OnInit{
   }
 
   onSubmit(){
-    this.signupService.storeEmployeeData(this.employeeForm.value).subscribe((response:any)=>{
+    this.signupService.storeUserData(this.employeeForm.value).subscribe((response:any)=>{
       console.log("stored data is",response)
       if(response){
         this.notificationService.showSuccess("Signup data added successfully", "Success");

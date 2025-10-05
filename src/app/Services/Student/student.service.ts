@@ -12,6 +12,10 @@ export class StudentService {
 
   constructor(private http: HttpClient) { }
 
+  storeStudentData(data: any) {
+    return this.http.post(`${this.apiUrl}/student`, data);
+  }
+
   getStudents() {
     return this.http.get(`${this.apiUrl}/student`);
   }

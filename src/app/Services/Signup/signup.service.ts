@@ -12,7 +12,15 @@ export class SignupService {
 
   constructor(private http:HttpClient) { }
 
-  storeEmployeeData(data:any){
-    return this.http.post(`${this.apiUrl}/student`,data);
+  storeUserData(data:any){
+    return this.http.post(`${this.apiUrl}/user`,data);
+  }
+
+  getUsers(){
+    return this.http.get(`${this.apiUrl}/user`);
+  }
+
+  deleteUser(id:number){
+    return this.http.delete(`${this.apiUrl}/user/${id}`);
   }
 }

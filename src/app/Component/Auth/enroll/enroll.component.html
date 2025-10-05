@@ -3,13 +3,13 @@
     <h2>Enroll New Student</h2>
     <p>Fill in all required details to register the student</p>
 
-    <form>
+    <form [formGroup]="enrollForm">
 
       <!-- Personal Details -->
       <h3>Personal Details</h3>
       <div class="form-group">
         <label><i class="fa fa-user"></i> Full Name</label>
-        <input type="text" formControlName="name" placeholder="Enter full name" />
+        <input type="text" formControlName="fullname" placeholder="Enter full name" />
       </div>
 
       <div class="form-group">
@@ -19,7 +19,7 @@
 
       <div class="form-group">
         <label><i class="fa fa-birthday-cake"></i> Date of Birth</label>
-        <input type="date" formControlName="dob" />
+        <input type="date" formControlName="dateofbirth" />
       </div>
 
       <div class="form-group">
@@ -41,17 +41,17 @@
       <h3>Parent / Guardian Details</h3>
       <div class="form-group">
         <label><i class="fa fa-user-tie"></i> Father's Name</label>
-        <input type="text" formControlName="fatherName" placeholder="Enter father's name" />
+        <input type="text" formControlName="fathername" placeholder="Enter father's name" />
       </div>
 
       <div class="form-group">
         <label><i class="fa fa-user-tie"></i> Mother's Name</label>
-        <input type="text" formControlName="motherName" placeholder="Enter mother's name" />
+        <input type="text" formControlName="mothername" placeholder="Enter mother's name" />
       </div>
 
       <div class="form-group">
         <label><i class="fa fa-phone"></i> Contact Number</label>
-        <input type="tel" formControlName="contactNumber" placeholder="Enter phone number" />
+        <input type="tel" formControlName="mobilenumber" placeholder="Enter phone number" />
       </div>
 
       <!-- Education Details -->
@@ -68,34 +68,34 @@
 
       <div class="form-group">
         <label><i class="fa fa-building"></i> Previous School</label>
-        <input type="text" formControlName="previousSchool" placeholder="Enter previous school" />
+        <input type="text" formControlName="previousschool" placeholder="Enter previous school" />
       </div>
 
       <div class="form-group">
         <label><i class="fa fa-id-badge"></i> Roll Number</label>
-        <input type="text" formControlName="rollNumber" placeholder="Enter roll number" />
+        <input type="text" formControlName="rollnumber" placeholder="Enter roll number" />
       </div>
 
       <!-- Admission Details -->
       <h3>Admission Details</h3>
       <div class="form-group">
         <label><i class="fa fa-calendar-check"></i> Admission Date</label>
-        <input type="date" formControlName="admissionDate" />
+        <input type="date" formControlName="admissiondate" />
       </div>
 
       <div class="form-group">
         <label><i class="fa fa-id-card"></i> Student ID</label>
-        <input type="text" formControlName="studentId" placeholder="Enter student ID" />
+        <input type="text" formControlName="studentid" placeholder="Enter student ID" />
       </div>
 
       <!-- Photo Upload -->
       <div class="form-group">
         <label><i class="fa fa-camera"></i> Upload Photo</label>
-        <input type="file" formControlName="photo" />
+        <input type="file" formControlName="image" />
       </div>
 
       <!-- Submit -->
-      <button type="submit">Enroll Student</button>
+      <button type="button" (click)="submitForm()">Enroll Student</button>
     </form>
 
     <p class="back-text">
