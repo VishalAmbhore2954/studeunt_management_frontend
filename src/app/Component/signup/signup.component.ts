@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { SignupService } from '../signup.service';
+import { SignupService } from '../../Services/Signup/signup.service';
 import { RouterLink } from '@angular/router';
+import { NotificationService } from '../../Services/Notification/nitification.service';
 
 @Component({
   selector: 'app-signup',
@@ -13,7 +14,7 @@ export class SignupComponent implements OnInit{
 
   employeeForm! : FormGroup;
 
-  constructor(private signupService:SignupService,private fb:FormBuilder){}
+  constructor(private signupService:SignupService,private fb:FormBuilder,private notificationService: NotificationService){}
 
   ngOnInit(): void {
     this.initForm();
@@ -32,9 +33,9 @@ export class SignupComponent implements OnInit{
     this.signupService.storeEmployeeData(this.employeeForm.value).subscribe((response:any)=>{
       console.log("stored data is",response)
       if(response){
-        alert("Signup data added successfully");
+        this.notificationService.showSuccess("Signup data added successfully", "Success");
       }else{
-        alert("failed to save");
+        this.notificationService.showError("Failed to save", "Error");
       }
     })
   }
