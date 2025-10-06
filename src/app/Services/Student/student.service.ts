@@ -13,14 +13,14 @@ export class StudentService {
   constructor(private http: HttpClient) { }
 
   storeStudentData(data: any) {
-    return this.http.post(`${this.apiUrl}/student`, data);
+    return this.http.post(`${this.apiUrl}/students`, data);
   }
 
   getStudents() {
-    return this.http.get(`${this.apiUrl}/student`);
+    return this.http.get(`${this.apiUrl}/students`);
   }
 
   deleteStudent(id: number) {
-    return this.http.delete(`${this.apiUrl}/student/${id}`);
+    return this.http.delete(`${this.apiUrl}/studentss/${id}`);
   }
 }

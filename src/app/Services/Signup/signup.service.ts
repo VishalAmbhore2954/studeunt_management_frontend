@@ -13,14 +13,14 @@ export class SignupService {
   constructor(private http:HttpClient) { }
 
   storeUserData(data:any){
-    return this.http.post(`${this.apiUrl}/user`,data);
+    return this.http.post(`${this.apiUrl}/users`,data);
   }
 
   getUsers(){
-    return this.http.get(`${this.apiUrl}/user`);
+    return this.http.get(`${this.apiUrl}/users`);
   }
 
   deleteUser(id:number){
-    return this.http.delete(`${this.apiUrl}/user/${id}`);
+    return this.http.delete(`${this.apiUrl}/users/${id}`);
   }
 }
