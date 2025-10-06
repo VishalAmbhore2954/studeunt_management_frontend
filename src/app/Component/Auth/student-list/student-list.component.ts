@@ -13,7 +13,7 @@ import { NotificationService } from '../../../Services/Notification/nitification
 export class StudentListComponent implements OnInit {
   studentList: any[] = [];
   isLoading: boolean = false;
-  userRole: string = 'user';
+  userRole: string = 'admin';
 
   constructor(
     private studentService: StudentService,

@@ -1,13 +1,15 @@
 <header class="app-header">
   <div class="header-content">
-    <h1 class="logo">Student Portal</h1>
+    <h1 class="logo" *ngIf="userRole === 'user'">Student Portal</h1>
+    <h1 class="logo" *ngIf="userRole === 'admin'">Admin Dashboard</h1>
 
     <button class="menu-toggle" (click)="toggleMenu()">
       <i class="fa fa-bars"></i>
     </button>
 
     <nav class="nav-links" [class.active]="menuOpen">
-      <a routerLink="/home" (click)="closeMenu()">Home</a>
+      <a *ngIf="userRole === 'user'" routerLink="/home" (click)="closeMenu()">Home</a>
+      <a *ngIf="userRole === 'admin'" routerLink="/admin-panel" (click)="closeMenu()">Dashboard</a>
       <a routerLink="/students-list" (click)="closeMenu()">Students</a>
       <a routerLink="/about" (click)="closeMenu()">About</a>
       <a routerLink="/contact" (click)="closeMenu()">Contact</a>

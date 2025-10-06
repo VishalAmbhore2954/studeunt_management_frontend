@@ -12,6 +12,7 @@ import { NgIf } from '@angular/common';
 })
 export class AppComponent {
   title = 'student management';
+  userRole: string = 'admin';
 
   constructor(private router: Router) {}
 

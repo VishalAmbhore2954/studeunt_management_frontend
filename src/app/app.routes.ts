@@ -9,6 +9,8 @@ import { SportsComponent } from './Component/Auth/sports/sports.component';
 import { AboutComponent } from './Component/Auth/about/about.component';
 import { ContactComponent } from './Component/Auth/contact/contact.component';
 import { EnrollComponent } from './Component/Auth/enroll/enroll.component';
+import { AdminPanelComponent } from './Component/Auth/admin-panel/admin-panel.component';
+import { UsersListComponent } from './Component/Auth/users-list/users-list.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -21,5 +23,7 @@ export const routes: Routes = [
     { path: 'sports', component: SportsComponent },
     { path: 'about', component: AboutComponent },
     { path : 'contact', component : ContactComponent },
-    { path: 'enroll', component: EnrollComponent }
+    { path: 'enroll', component: EnrollComponent },
+    { path: 'admin-panel', component: AdminPanelComponent },
+    { path: 'users-list', component: UsersListComponent }
 ];
