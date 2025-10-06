@@ -1,1 +1,33 @@
-<p>users-list works!</p>
+<div class="table-container">
+  <h2>Users List</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>City</th>
+        <th *ngIf="userRole === 'admin'">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let student of userList; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ student.name }}</td>
+        <td>{{ student.email }}</td>
+        <td>{{ student.city }}</td>
+        <td class="action-buttons" *ngIf="userRole === 'admin'">
+          <button class="edit-btn" title="Edit">
+            <i class="fa fa-edit"></i>
+          </button>
+          <button class="delete-btn" title="Delete" (click)="deleteUser(student.id)">
+            <i class="fa fa-trash"></i>
+          </button>
+          <button class="admin-btn" title="Make Admin">
+            <i class="fa-solid fa-user-shield"></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
