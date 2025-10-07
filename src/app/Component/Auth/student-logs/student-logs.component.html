@@ -1,0 +1,25 @@
+<div class="table-container">
+  <h2>Deleted Student List</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Sr. No.</th>
+        <th>Fullname</th>
+        <th>Email</th>
+        <th>Mobile Number</th>
+        <th>Deleted By</th>
+        <th>Deleted At</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let student of studentList; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ student.name }}</td>
+        <td>{{ student.email }}</td>
+        <td>{{ student.mobilenumber }}</td>
+        <td>{{ student.deletedBy }}</td>
+        <td>{{ student.deleted_at | date }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

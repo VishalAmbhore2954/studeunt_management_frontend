@@ -11,6 +11,7 @@ import { ContactComponent } from './Component/Auth/contact/contact.component';
 import { EnrollComponent } from './Component/Auth/enroll/enroll.component';
 import { AdminPanelComponent } from './Component/Auth/admin-panel/admin-panel.component';
 import { UsersListComponent } from './Component/Auth/users-list/users-list.component';
+import { StudentLogsComponent } from './Component/Auth/student-logs/student-logs.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -25,5 +26,6 @@ export const routes: Routes = [
     { path : 'contact', component : ContactComponent },
     { path: 'enroll', component: EnrollComponent },
     { path: 'admin-panel', component: AdminPanelComponent },
-    { path: 'users-list', component: UsersListComponent }
+    { path: 'users-list', component: UsersListComponent },
+    { path: 'student-logs', component: StudentLogsComponent },
 ];

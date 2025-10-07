@@ -3,6 +3,7 @@ import { StudentService } from '../../../Services/Student/student.service';
 import { NgFor, NgIf } from '@angular/common';
 import { HeaderComponent } from '../header/header.component';
 import { NotificationService } from '../../../Services/Notification/nitification.service';
+import { HttpParams } from '@angular/common/http';
 
 @Component({
   selector: 'app-student-list',
@@ -36,8 +37,9 @@ export class StudentListComponent implements OnInit {
   }
 
   deleteStudent(id: number) {
+    const queryParams = new HttpParams().append('deletedByEmail', 'admin@example.com');
     if (confirm('Are you sure to delete this student data?')) {
-      this.studentService.deleteStudent(id).subscribe((response: any) => {
+      this.studentService.deleteStudent(id, queryParams).subscribe((response: any) => {
         if (response) {
           this.notificationService.showSuccess(
             'Student data deleted successfully',

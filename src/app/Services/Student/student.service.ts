@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
 
 @Injectable({
@@ -20,7 +20,7 @@ export class StudentService {
     return this.http.get(`${this.apiUrl}/students`);
   }
 
-  deleteStudent(id: number) {
-    return this.http.delete(`${this.apiUrl}/studentss/${id}`);
+  deleteStudent(id: number, params: HttpParams) {
+    return this.http.delete(`${this.apiUrl}/students/${id}`, { params });
   }
 }
