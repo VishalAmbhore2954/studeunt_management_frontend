@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { SignupService } from '../../../Services/Signup/signup.service';
 import { NgFor, NgIf } from '@angular/common';
+import { UserService } from '../../../Services/User/user.service';
+import { NotificationService } from '../../../Services/Notification/nitification.service';
 
 @Component({
   selector: 'app-users-list',
@@ -12,14 +14,14 @@ export class UsersListComponent implements OnInit {
   userList: any;
   userRole: string = 'admin';
 
-  constructor(private userService: SignupService) { }
+  constructor(private signupService: SignupService, private userService: UserService,private notificationService: NotificationService) { }
 
   ngOnInit(): void {
     this.getAllUsers();
   }
 
   getAllUsers() {
-    this.userService.getUsers().subscribe((users:any)=>{
+    this.signupService.getUsers().subscribe((users:any)=>{
       this.userList = users;
       console.log("User list is",this.userList)
     })
@@ -27,7 +29,7 @@ export class UsersListComponent implements OnInit {
 
   deleteUser(id: number) {
     if (confirm('Are you sure to delete this user?')) {
-      this.userService.deleteUser(id).subscribe((response: any) => {
+      this.signupService.deleteUser(id).subscribe((response: any) => {
         if (response) {
           alert('User deleted successfully');
           this.getAllUsers();
@@ -39,7 +41,12 @@ export class UsersListComponent implements OnInit {
   }
 
   makeAdmin(id: number) {
-    alert('Making admin is in progress, we will commited to make this feature soon.');
+    this.userService.setUserRole('admin', id).subscribe((response: any) => {
+      if (response) {
+        this.notificationService.showSuccess("User role updated to admin","Success");
+      } else {
+        this.notificationService.showError("Failed to update user role","Error");
+      }
+    });
   }
-
 }
