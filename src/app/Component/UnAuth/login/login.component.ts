@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit{
 
           localStorage.setItem('userData', JSON.stringify(userData));
           this.notificationService.showSuccess("Login Successfully","Success");
-          if(userData?.data?.user_role === 'admin'){
+          if(userData?.data?.user_role === 'admin' || userData?.data?.user_role === 'owner'){
           this.router.navigate(['/admin-panel']);
         } else {
           this.router.navigate(['/home']);
