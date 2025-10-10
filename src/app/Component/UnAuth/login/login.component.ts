@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit{
       this.loginService.loginUser(this.loginForm.value).subscribe({
         next: (response: any) => {
           console.log('Login successful', response);
-          localStorage.setItem('userData', response);
+          localStorage.setItem('userData', JSON.stringify(response));
           this.notificationService.showSuccess("Login Successfully","Success");
           if(response?.user_role === 'admin'){
           this.router.navigate(['/admin-panel']);

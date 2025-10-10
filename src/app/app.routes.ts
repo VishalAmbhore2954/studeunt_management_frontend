@@ -12,20 +12,23 @@ import { EnrollComponent } from './Component/Auth/enroll/enroll.component';
 import { AdminPanelComponent } from './Component/Auth/admin-panel/admin-panel.component';
 import { UsersListComponent } from './Component/Auth/users-list/users-list.component';
 import { StudentLogsComponent } from './Component/Auth/student-logs/student-logs.component';
+import { Guard } from './Guards/guard.';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'login', pathMatch: 'full' },
-    { path:'home', component:HomeComponent},
-    { path:'login',component:LoginComponent},
+
+    { path:'login',component:LoginComponent },
     { path:'signup', component:SignupComponent },
-    { path: 'students-list', component: StudentListComponent },
-    { path: 'teachers', component: TeachersComponent },
-    { path: 'subjects', component: SubjectsComponent },
-    { path: 'sports', component: SportsComponent },
-    { path: 'about', component: AboutComponent },
-    { path : 'contact', component : ContactComponent },
-    { path: 'enroll', component: EnrollComponent },
-    { path: 'admin-panel', component: AdminPanelComponent },
-    { path: 'users-list', component: UsersListComponent },
-    { path: 'student-logs', component: StudentLogsComponent },
+
+    { path:'home', component:HomeComponent, canActivate: [Guard] },
+    { path: 'students-list', component: StudentListComponent, canActivate: [Guard] },
+    { path: 'teachers', component: TeachersComponent, canActivate: [Guard] },
+    { path: 'subjects', component: SubjectsComponent, canActivate: [Guard] },
+    { path: 'sports', component: SportsComponent, canActivate: [Guard] },
+    { path: 'about', component: AboutComponent,canActivate: [Guard] },
+    { path : 'contact', component : ContactComponent,canActivate: [Guard] },
+    { path: 'enroll', component: EnrollComponent,canActivate: [Guard] },
+    { path: 'admin-panel', component: AdminPanelComponent,canActivate: [Guard] },
+    { path: 'users-list', component: UsersListComponent, canActivate: [Guard] },
+    { path: 'student-logs', component: StudentLogsComponent, canActivate: [Guard] },
 ];
