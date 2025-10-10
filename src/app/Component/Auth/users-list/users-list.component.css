@@ -165,7 +165,7 @@ button:hover {
   }
 
   .edit-btn {
-    background-color: #4caf50; /* green */
+    color: #4caf50; /* green */
   }
 
   .delete-btn {
@@ -173,7 +173,7 @@ button:hover {
   }
 
   .admin-btn {
-    background-color: #2196f3; /* blue */
+    color: #2196f3; /* blue */
   }
 
   .action-buttons button:hover {
