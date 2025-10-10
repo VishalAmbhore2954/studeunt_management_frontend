@@ -23,7 +23,7 @@
           <button class="delete-btn" title="Delete" (click)="deleteUser(user.id)">
             <i class="fa fa-trash"></i>
           </button>
-          <button class="admin-btn" title="Make Admin" (click)="makeAdmin(user.id,user.user_type)">
+          <button *ngIf="user.user_type !== 'owner'" class="admin-btn" title="Make Admin" (click)="makeAdmin(user.id,user.user_type)">
             <i class="fa-solid fa-user-shield"></i>
           </button>
         </td>
