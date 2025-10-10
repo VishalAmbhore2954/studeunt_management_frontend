@@ -44,10 +44,10 @@ export class UsersListComponent implements OnInit {
     if (confirm('Are you sure to delete this user?')) {
       this.signupService.deleteUser(id).subscribe((response: any) => {
         if (response) {
-          alert('User deleted successfully');
+          this.notificationService.showSuccess("User deleted successfully","Success");
           this.getAllUsers();
         } else {
-          alert('Failed to delete user');
+          this.notificationService.showError("Failed to delete user","Error");
         }
       });
     }
