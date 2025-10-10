@@ -58,6 +58,7 @@ export class UsersListComponent implements OnInit {
       if(confirm(`Do you want to change user role to ${toggledRole}?`)){
         this.userService.setUserRole(toggledRole, id).subscribe((response: any) => {
         if (response) {
+          this.getAllUsers();
           this.notificationService.showSuccess(`User role updated to ${toggledRole}`,"Success");
         } else {
           this.notificationService.showError("Failed to update user role","Error");
