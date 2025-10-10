@@ -12,13 +12,20 @@ import { AuthService } from '../../../Services/Auth/auth.service';
 })
 export class HeaderComponent implements OnInit {
   menuOpen = false;
-  userRole: string = 'admin';
+  userRole: string = 'user';
   username!: string;
 
   constructor(private authService: AuthService, private router: Router) {}
 
   ngOnInit(): void {
     this.getUserData();
+    this.getUserRole();
+  }
+
+  getUserRole(){
+    this.authService.userRole$.subscribe((userRole:any)=>{
+      this.userRole = userRole;
+    })
   }
 
   getUserData() {

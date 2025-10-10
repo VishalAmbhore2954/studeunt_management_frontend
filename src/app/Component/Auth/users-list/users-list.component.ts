@@ -3,6 +3,7 @@ import { SignupService } from '../../../Services/Signup/signup.service';
 import { NgFor, NgIf } from '@angular/common';
 import { UserService } from '../../../Services/User/user.service';
 import { NotificationService } from '../../../Services/Notification/nitification.service';
+import { AuthService } from '../../../Services/Auth/auth.service';
 
 @Component({
   selector: 'app-users-list',
@@ -12,12 +13,24 @@ import { NotificationService } from '../../../Services/Notification/nitification
 })
 export class UsersListComponent implements OnInit {
   userList: any;
-  userRole: string = 'admin';
+  userRole: string = 'user';
 
-  constructor(private signupService: SignupService, private userService: UserService,private notificationService: NotificationService) { }
+  constructor(
+    private signupService: SignupService,
+    private userService: UserService,
+    private notificationService: NotificationService,
+    private authService: AuthService,
+  ) { }
 
   ngOnInit(): void {
     this.getAllUsers();
+    this.getUserRole();
+  }
+
+  getUserRole(){
+    this.authService.userRole$.subscribe((userRole:any)=>{
+      this.userRole = userRole;
+    })
   }
 
   getAllUsers() {

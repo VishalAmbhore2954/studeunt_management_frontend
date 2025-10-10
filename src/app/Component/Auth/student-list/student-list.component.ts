@@ -4,6 +4,7 @@ import { NgFor, NgIf } from '@angular/common';
 import { HeaderComponent } from '../header/header.component';
 import { NotificationService } from '../../../Services/Notification/nitification.service';
 import { HttpParams } from '@angular/common/http';
+import { AuthService } from '../../../Services/Auth/auth.service';
 
 @Component({
   selector: 'app-student-list',
@@ -14,15 +15,24 @@ import { HttpParams } from '@angular/common/http';
 export class StudentListComponent implements OnInit {
   studentList: any[] = [];
   isLoading: boolean = false;
-  userRole: string = 'admin';
+  userRole: string = 'user';
 
   constructor(
     private studentService: StudentService,
-    private notificationService: NotificationService
+    private notificationService: NotificationService,
+    private authService: AuthService,
   ) {}
 
   ngOnInit(): void {
     this.getAllStudents();
+    this.getUserRole();
+  }
+
+  getUserRole(){
+    this.authService.userRole$.subscribe((userRole:any)=>{
+      this.userRole = userRole;
+      console.log("user role found in student list component",this.userRole);
+    })
   }
 
   getAllStudents() {
