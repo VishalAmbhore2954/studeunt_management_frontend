@@ -7,8 +7,8 @@ import { environment } from '../../../environments/environment';
 })
 export class StudentService {
 
-  // private apiUrl = environment.apiBaseUrl;
-  private apiUrl = 'https://student-management-backend-2-xz3c.onrender.com';
+  private apiUrl = environment.apiBaseUrl;
+  // private apiUrl = 'https://student-management-backend-2-xz3c.onrender.com';
 
   constructor(private http: HttpClient) { }
 
