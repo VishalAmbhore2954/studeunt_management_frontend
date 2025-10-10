@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { Router, RouterLink } from '@angular/router';
 import { NgClass, NgIf } from '@angular/common';
+import { AuthService } from '../../../Services/Auth/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -9,9 +10,24 @@ import { NgClass, NgIf } from '@angular/common';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
   menuOpen = false;
   userRole: string = 'admin';
+  username!: string;
+
+  constructor(private authService: AuthService, private router: Router) {}
+
+  ngOnInit(): void {
+    this.getUserData();
+  }
+
+  getUserData() {
+    const userData = localStorage.getItem('userData');
+    if (userData) {
+      const parsedData = JSON.parse(userData);
+      this.username = parsedData.name;
+    }
+  }
 
   toggleMenu() {
     this.menuOpen = !this.menuOpen;
@@ -19,5 +35,11 @@ export class HeaderComponent {
 
   closeMenu() {
     this.menuOpen = false;
+  }
+
+  logout() {
+    this.authService.logout();
+    this.router.navigate(['/login']);
+    this.closeMenu();
   }
 }

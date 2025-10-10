@@ -32,9 +32,15 @@ export class LoginComponent implements OnInit{
       this.loginService.loginUser(this.loginForm.value).subscribe({
         next: (response: any) => {
           console.log('Login successful', response);
-          localStorage.setItem('userData', JSON.stringify(response));
+
+          const userData = {
+            data: response,
+            expiry: new Date().getTime() + 5 * 60 * 60 * 1000
+          };
+
+          localStorage.setItem('userData', JSON.stringify(userData));
           this.notificationService.showSuccess("Login Successfully","Success");
-          if(response?.user_role === 'admin'){
+          if(userData?.data?.user_role === 'admin'){
           this.router.navigate(['/admin-panel']);
         } else {
           this.router.navigate(['/home']);

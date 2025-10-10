@@ -1,7 +1,7 @@
 <header class="app-header">
   <div class="header-content">
-    <h1 class="logo" *ngIf="userRole === 'user'">Student Portal</h1>
-    <h1 class="logo" *ngIf="userRole === 'admin'">Admin Dashboard</h1>
+    <h1 class="logo" *ngIf="userRole === 'user'">Welcome {{ username }}</h1>
+    <h1 class="logo" *ngIf="userRole === 'admin'">Welcome {{ username }}</h1>
 
     <button class="menu-toggle" (click)="toggleMenu()">
       <i class="fa fa-bars"></i>
@@ -15,7 +15,7 @@
       <a routerLink="/contact" (click)="closeMenu()">Contact</a>
     </nav>
 
-    <button class="logout-btn" (click)="closeMenu()">
+    <button class="logout-btn" (click)="logout()">
       <i class="fa fa-sign-out"></i> Logout
     </button>
   </div>
