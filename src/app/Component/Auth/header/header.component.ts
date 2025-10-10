@@ -25,7 +25,9 @@ export class HeaderComponent implements OnInit {
     const userData = localStorage.getItem('userData');
     if (userData) {
       const parsedData = JSON.parse(userData);
-      this.username = parsedData.name;
+      const fullName = parsedData.data.name;
+
+      this.username = fullName?.split(' ')[0] || '';
     }
   }
 
