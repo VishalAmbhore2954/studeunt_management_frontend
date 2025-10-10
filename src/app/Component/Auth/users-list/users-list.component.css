@@ -173,7 +173,7 @@ button:hover {
   }
 
   .admin-btn {
-    color: #1976d2 /* blue */
+    background-color: #1976d2 /* blue */
   }
 
   .action-buttons button:hover {
