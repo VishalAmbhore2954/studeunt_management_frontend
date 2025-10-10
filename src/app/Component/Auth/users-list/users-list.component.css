@@ -169,7 +169,7 @@ button:hover {
   }
 
   .delete-btn {
-    background-color: #f44336; /* red */
+    color: #ef4444;
   }
 
   .admin-btn {
