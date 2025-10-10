@@ -17,10 +17,10 @@
         <td>{{ user.email }}</td>
         <td>{{ user.userRole }}</td>
         <td class="action-buttons" *ngIf="userRole === 'owner'">
-          <button class="edit-btn" title="Edit">
+          <button *ngIf="user.userRole !== 'owner'" class="edit-btn" title="Edit">
             <i class="fa fa-edit"></i>
           </button>
-          <button class="delete-btn" title="Delete" (click)="deleteUser(user.id)">
+          <button *ngIf="user.userRole !== 'owner'" class="delete-btn" title="Delete" (click)="deleteUser(user.id)">
             <i class="fa fa-trash"></i>
           </button>
           <button *ngIf="user.userRole !== 'owner'" class="admin-btn" title="Make Admin" (click)="makeAdmin(user.id,user.userRole)">
