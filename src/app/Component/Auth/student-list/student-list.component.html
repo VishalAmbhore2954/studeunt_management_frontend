@@ -16,7 +16,7 @@
         <th>Grade</th>
         <th>Date Of birth</th>
         <th>City</th>
-        <th *ngIf="userRole === 'admin'">Action</th>
+        <th *ngIf="userRole === 'admin' || userRole === 'owner'">Action</th>
       </tr>
     </thead>
     <tbody>
@@ -31,7 +31,7 @@
         <td>{{ student.grade }}</td>
         <td>{{ student.dateofbirth }}</td>
         <td>{{ student.city }}</td>
-        <td class="action-buttons" *ngIf="userRole === 'admin'">
+        <td class="action-buttons" *ngIf="userRole === 'admin' || userRole === 'owner'">
           <button class="edit-btn" title="Edit">
             <i class="fa fa-edit"></i>
           </button>

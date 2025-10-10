@@ -53,13 +53,16 @@ export class UsersListComponent implements OnInit {
     }
   }
 
-  makeAdmin(id: number) {
-    this.userService.setUserRole('admin', id).subscribe((response: any) => {
-      if (response) {
-        this.notificationService.showSuccess("User role updated to admin","Success");
-      } else {
-        this.notificationService.showError("Failed to update user role","Error");
-      }
-    });
+  makeAdmin(id: number,userType: string) {
+    const toggledRole = userType === 'admin' ? 'user' : 'admin';
+      if(confirm(`Do you want to change user role to ${toggledRole}?`)){
+        this.userService.setUserRole(toggledRole, id).subscribe((response: any) => {
+        if (response) {
+          this.notificationService.showSuccess(`User role updated to ${toggledRole}`,"Success");
+        } else {
+          this.notificationService.showError("Failed to update user role","Error");
+        }
+      });
+    }
   }
 }
