@@ -28,32 +28,33 @@ export class LoginComponent implements OnInit{
   }
 
   onSubmit(){
-    if(this.loginForm.valid){
-      this.loginService.loginUser(this.loginForm.value).subscribe({
-        next: (response: any) => {
-          console.log('Login successful', response);
+    // if(this.loginForm.valid){
+    //   this.loginService.loginUser(this.loginForm.value).subscribe({
+    //     next: (response: any) => {
+    //       console.log('Login successful', response);
 
-          const userData = {
-            data: response,
-            expiry: new Date().getTime() + 5 * 60 * 60 * 1000
-          };
+    //       const userData = {
+    //         data: response,
+    //         expiry: new Date().getTime() + 5 * 60 * 60 * 1000
+    //       };
 
-          localStorage.setItem('userData', JSON.stringify(userData));
-          this.notificationService.showSuccess("Login Successfully","Success");
-          if(userData?.data?.user_role === 'admin' || userData?.data?.user_role === 'owner'){
-          this.router.navigate(['/admin-panel']);
-        } else {
-          this.router.navigate(['/home']);
-        }
-      },
-      error: (error) => {
-        console.error('Login failed', error);
-        this.notificationService.showError("Login Failed","Error");
-        }
-      });
-    } else {
-      alert("Form is invalid");
-      this.notificationService.showWarning("Please enter valid data","Warning");
-    }
+    //       localStorage.setItem('userData', JSON.stringify(userData));
+    //       this.notificationService.showSuccess("Login Successfully","Success");
+    //       if(userData?.data?.user_role === 'admin' || userData?.data?.user_role === 'owner'){
+    //       this.router.navigate(['/admin-panel']);
+    //     } else {
+    //       this.router.navigate(['/home']);
+    //     }
+    //   },
+    //   error: (error) => {
+    //     console.error('Login failed', error);
+    //     this.notificationService.showError("Login Failed","Error");
+    //     }
+    //   });
+    // } else {
+    //   alert("Form is invalid");
+    //   this.notificationService.showWarning("Please enter valid data","Warning");
+    // }
+    this.router.navigate(['/home']);
   }
 }
